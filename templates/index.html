@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Home</title>
+</head>
+<body>
+<a href="/logout/">
+    <button>Log out</button>
+</a><form method="post">
+            {% csrf_token %}
+              <input type="text" name="sarlavha" placeholder="sarlavha qoshish" required>
+              <input type="text" name="mavzu" placeholder="mavzu qoshish" required>
+              <input type="text" name="matn" placeholder="matn qoshish" >
+
+              <button type="submit" class="btn">Blog qoshish</button>
+
+          </form>
+<hr>
+<form>
+    {% for blog in blogs %}
+    <a href="blog/{{ blog.id }}">
+
+     <p>{{ forloop.counter }}.Sarlavha:{{ blog.sarlavha }}</p>
+
+    </a>
+
+    {% endfor %}
+</form>
+</body>
+</html>

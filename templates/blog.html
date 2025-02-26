@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog View</title>
+</head>
+<body>
+<form>
+    {% csrf_token %}
+     <p>Sarlavha:{{ blog.sarlavha }}</p>
+
+     <p>Mavzu:{{ blog.mavzu }}</p>
+
+     <p>Matn:{{ blog.matn }}</p>
+
+     <p>Muallif:{{ blog.muallif }}</p>
+
+     <p>Sana:{{ blog.sana }}</p><br>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add blog</title>
+</head>
+<body>
+        <form method="post">
+            {% csrf_token %}
+              <input type="text" name="sarlavha" placeholder="sarlavha qoshish" required>
+              <input type="text" name="mavzu" placeholder="mavzu qoshish" required>
+              <input type="text" name="matn" placeholder="matn qoshish" >
+              <select name="muallif">
+                  {% for muallif in muallifs %}
+                <option class="opt">
+                    {{ muallif.ism }}
+                </option>
+                {% endfor %}
+              </select>
+              <button type="submit" class="btn">Blog qoshish</button>
+
+          </form>
+</body>
+</html>
