@@ -21,7 +21,7 @@ class HomeView(View):
                 sarlavha=request.POST.get('sarlavha'),
                 mavzu=request.POST.get('mavzu'),
                 matn=request.POST.get('matn'),
-                muallif=muallif,
+                muallif=Muallif.objects.last(),
             )
             return redirect('home')
         return redirect("login")
